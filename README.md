@@ -1,3 +1,40 @@
+OnDemand Pluggable Modular Homomorphic Encryption Engine for Privacy Preserving Operations
+
+Homomoprhic Encryption capabilities provided by Microsoft SEAL Library.
+
+Codebase is modular i.e there are four different modules for key generation, encryption, homomorphic computation and decryption.
+
+This code base generates 4 executables: Sealkeygen, Sealencrypt,Sealcompute and Sealdecrypt
+
+Since executables are generated, they can be used to build installation files 
+
+Description
+
+Executable Name : Sealkeygen 
+
+1) Generates Private key and Public key and stores them in /tmp/sk and /tmp/pk files respectively
+
+Executable Name : Sealencrypt
+
+1) Takes input from commandline for data value
+2) Uses Publick Key from /tmp/pk for encryption
+3) Stores generated ciphertext value in /tmp/en
+
+Executable Name : Sealcompute
+
+1) Uses /tmp/en to read the ciphertext of data value
+2) computes square Homomorphically
+3) stores generated ciphertext of square data value in /tmp/ensq
+
+Executable Name : Sealdecrypt
+
+1) Uses Secret Key from /tmp/sk
+2) Uses /tmp/ensq to read the ciphertext of square data value
+3) Displays the decrypted ciphertext value to standard output stream
+4) Deletes all the /tmp files generated
+
+
+
 # Microsoft SEAL
 
 Microsoft SEAL is an easy-to-use open-source ([MIT licensed](LICENSE)) homomorphic encryption library developed by the Cryptography and Privacy Research group at Microsoft.
