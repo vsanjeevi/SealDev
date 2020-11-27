@@ -15,14 +15,10 @@ Example: Integration with Google PJC with Voter-list validation use case: https:
 
 sealcompute executable doesnt need any keys for homomorphic compuation. this design enables to outsource the compuation to cloud providers.
 Since the computation is done directly on ciphertexts (encrypted user data) and can be decrypted only the user holding the secret key, data privacy is preserved.
+This basic example supports square of ciphertexts and can be readily extended to include operations supported by BFV Seal.
 
 This implementation uses BFV scheme of Microsoft SEAL and is limited to real numbers. No Fractions are supported.
-
 Microsoft Seal is based on Learing with Errors over Rings computational problem and is considered to be quantum resistant.
-
-Limitations:
-
-
 
 Description
 
@@ -49,7 +45,7 @@ Executable Name : Sealdecrypt
 3) Displays the decrypted ciphertext value to standard output stream
 4) Deletes all the /tmp files generated
 
-How to run and generate executables for 
+How to run and generate executables
 
 Place the sealkeygen.cpp, sealencrypt.cpp, sealcompute.cpp and sealdecrypt.cpp, CMakeLists.txt files in /SEAL/native/examples/ Directory.
 
@@ -68,6 +64,8 @@ git clone https://github.com/microsoft/SEAL.git
 cd SEAL
 cmake . -DSEAL_BUILD_EXAMPLES=ON -DSEAL_BUILD_TESTS=ON
 make
+
+
 
 ***********************************************************************************************************************************************************************
 
