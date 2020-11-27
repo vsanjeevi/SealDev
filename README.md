@@ -1,15 +1,15 @@
-OnDemand Pluggable Modular Homomorphic Encryption Engine for Privacy Preserving Operations
+<B>OnDemand Pluggable Modular Homomorphic Encryption Engine for Privacy Preserving Operations</B>
 
 Homomoprhic Encryption capabilities provided by Microsoft SEAL Library.
 
-Modular: 
+<B>Modular</B>: 
 Codebase is Modular i.e there are four different modules for key generation, encryption, homomorphic computation and decryption.
 Executables are compliant to develop Secure Multi-party (client-server representation) compuation models like Private Set Interesection and Private Join and Compute.
 They can be individually executed sequentially.
 
 This codebase generates 4 executables: Sealkeygen, Sealencrypt, Sealcompute and Sealdecrypt
 
-OnDemand & Pluggable : Since executables are generated, they can be used to build installation files and integrated on-demand with other libraries/codebases.
+<B>OnDemand & Pluggable</B> : Since executables are generated, they can be used to build installation files and integrated on-demand with other libraries/codebases.
 Code base can be integrated with other platforms or modules to introduce homomorphic encryption capabilities
 Example: Integration with Google PJC with Voter-list validation use case: https://github.com/YuvaAthur/private-join-and-compute
 
@@ -17,7 +17,9 @@ sealcompute executable doesnt need any keys for homomorphic compuation. this des
 Since the computation is done directly on ciphertexts (encrypted user data) and can be decrypted only the user holding the secret key, data privacy is preserved.
 This basic example supports square of ciphertexts and can be readily extended to include operations supported by BFV Seal.
 
-This implementation uses BFV scheme of Microsoft SEAL and is limited to real numbers. No Fractions are supported.
+In a Multi-party secure compuation implementation scenario with client and server personas represenating the two parties, sealcompute can be placed in server to isolate the compuation part and sealdecrypt executable can be called in client side. Placing the sealkeygen and sealencrypt executables can be decided based on implementation.
+
+This implementation uses BFV scheme of Microsoft SEAL and is limited to real numbers. 
 Microsoft Seal is based on Learing with Errors over Rings computational problem and is considered to be quantum resistant.
 
 Description
@@ -45,24 +47,36 @@ Executable Name : Sealdecrypt
 3) Displays the decrypted ciphertext value to standard output stream
 4) Deletes all the /tmp files generated
 
-How to run and generate executables
+<B>How to build and generate executables</B>
 
 Place the sealkeygen.cpp, sealencrypt.cpp, sealcompute.cpp and sealdecrypt.cpp, CMakeLists.txt files in /SEAL/native/examples/ Directory.
 
 Run as root user.
 
 sudo su -
+
 wget https://github.com/Kitware/CMake/releases/download/v3.17.5/cmake-3.17.5.tar.gz
+
 tar -zxvf cmake-3.17.5.tar.gz
+
 cd cmake-3.17.5
+
 ./bootstrap
+
 make 
+
 make install
+
 export PATH="/root/cmake-3.17.5/bin:$PATH"
+
 cmake --version
+
 git clone https://github.com/microsoft/SEAL.git
+
 cd SEAL
-cmake . -DSEAL_BUILD_EXAMPLES=ON -DSEAL_BUILD_TESTS=ON
+
+cmake . -DSEAL_BUILD_EXAMPLES=ON -DSEAL_BUILD_TESTS=OFF
+
 make
 
 
