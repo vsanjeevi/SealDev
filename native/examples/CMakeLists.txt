@@ -16,7 +16,7 @@ if(NOT DEFINED SEAL_BUILD_EXAMPLES)
 endif()
 
 if(SEAL_BUILD_EXAMPLES)
-#creating seal_keygen executable
+#creating sealkeygen executable
     add_executable(sealkeygen)
     target_sources(sealkeygen
         PRIVATE
@@ -24,7 +24,7 @@ if(SEAL_BUILD_EXAMPLES)
     )
 
 
-#creating seal_client1 executable
+#creating sealencrypt executable
     add_executable(sealencrypt)
     target_sources(sealencrypt
         PRIVATE
@@ -32,7 +32,7 @@ if(SEAL_BUILD_EXAMPLES)
     )
 
 
-#creating seal_server executable
+#creating sealcompute executable
     add_executable(sealcompute)
     target_sources(sealcompute
         PRIVATE
@@ -40,7 +40,7 @@ if(SEAL_BUILD_EXAMPLES)
     )
 
 
-#creating seal_client2 executable
+#creating sealdecrypt executable
     add_executable(sealdecrypt)
     target_sources(sealdecrypt
         PRIVATE
