@@ -1,4 +1,4 @@
-<B>OnDemand Pluggable Modular Homomorphic Encryption Engine for Privacy Preserving Operations</B>
+<B>On-Demand Pluggable Modular Homomorphic Encryption Engine for Privacy Preserving Operations</B>
 
 Homomoprhic Encryption capabilities provided by Microsoft SEAL Library.
 
