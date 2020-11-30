@@ -3,19 +3,17 @@
 Homomoprhic Encryption capabilities provided by Microsoft SEAL Library.
 
 <B>Modular</B>: 
-Codebase is Modular i.e there are four different modules for key generation, encryption, homomorphic computation and decryption.
-Executables are compliant to develop Secure Multi-party (client-server representation) compuation models like Private Set Interesection and Private Join and Compute.
-They can be individually executed sequentially.
-
-This codebase generates 4 executables: Sealkeygen, Sealencrypt, Sealcompute and Sealdecrypt
+Codebase is Modular i.e there are four modules, one each for key generation, encryption, homomorphic computations and decryption.
+Executables are compliant with Secure Multi-party (client-server representation) compuation models like Private Set Interesection and Private Join and Compute.
+They can be individually run one by one. This codebase generates 4 executables: Sealkeygen, Sealencrypt, Sealcompute and Sealdecrypt.
 
 <B>OnDemand & Pluggable</B> : Since executables are generated, they can be used to build installation files and integrated on-demand with other libraries/codebases.
-Code base can be integrated with other platforms or modules to introduce homomorphic encryption capabilities
-Example: Integration with Google PJC with Voter-list validation use case: https://github.com/YuvaAthur/private-join-and-compute
+They can be integrated with other platforms or modules to introduce homomorphic encryption capabilities
+Example: Integration with Google PJC for Voter-list validation use case: https://github.com/YuvaAthur/private-join-and-compute
 
 sealcompute executable doesnt need any keys for homomorphic compuation. this design enables to outsource the compuation to cloud providers.
 Since the computation is done directly on ciphertexts (encrypted user data) and can be decrypted only the user holding the secret key, data privacy is preserved.
-This basic example supports square of ciphertexts and can be readily extended to include operations supported by BFV Seal.
+This basic example supports square of ciphertexts and can be readily extended to include other operations supported by BFV Seal.
 
 In a Multi-party secure compuation implementation scenario with client and server personas represenating the two parties, sealcompute can be placed in server to isolate the compuation part and sealdecrypt executable can be called in client side. Placing the sealkeygen and sealencrypt executables can be decided based on implementation.
 
@@ -31,7 +29,7 @@ Executable Name : Sealkeygen
 Executable Name : Sealencrypt
 
 1) Takes input from commandline for data value
-2) Uses Publick Key from /tmp/pk for encryption
+2) Uses Public Key from /tmp/pk for encryption
 3) Stores generated ciphertext value in /tmp/en
 
 Executable Name : Sealcompute
