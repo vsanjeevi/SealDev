@@ -47,8 +47,6 @@ Executable Name : Sealdecrypt
 
 <B>How to build and generate executables</B>
 
-Place the sealkeygen.cpp, sealencrypt.cpp, sealcompute.cpp and sealdecrypt.cpp, CMakeLists.txt files in /SEAL/native/examples/ Directory.
-
 Run as root user.
 
 sudo su -
@@ -72,6 +70,8 @@ cmake --version
 git clone https://github.com/microsoft/SEAL.git
 
 cd SEAL
+
+Place the sealkeygen.cpp, sealencrypt.cpp, sealcompute.cpp and sealdecrypt.cpp, CMakeLists.txt files from this code base to /SEAL/native/examples/ Directory.
 
 cmake . -DSEAL_BUILD_EXAMPLES=ON -DSEAL_BUILD_TESTS=OFF
 
